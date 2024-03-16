@@ -5,6 +5,7 @@ package com.prosoal;
 
 import org.yaml.snakeyaml.Yaml;
 
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -13,14 +14,8 @@ public class yamlTeamLoader {
 
     public static void loadTeams(String filePath) {
         Yaml yaml = new Yaml();
-        try (InputStream inputStream = yamlTeamLoader.class
-                .getClassLoader()
-                .getResourceAsStream(filePath)) {
-            if (inputStream == null) {
-                throw new RuntimeException("Cannot find " + filePath + " file");
-            }
+        try (InputStream inputStream = new FileInputStream(filePath)) {
             Map<String, Object> data = yaml.load(inputStream);
-
             // Directly extract "developers" from the loaded YAML
             String teamMembers;
             if (data.containsKey("github_team")) {
@@ -43,6 +38,6 @@ public class yamlTeamLoader {
     }
 
     public static void main(String[] args) {
-        loadTeams("teams/plugin-dark-theme.YAML");
+        loadTeams("./permissions/plugin-dark-theme.YAML");
     }
 }

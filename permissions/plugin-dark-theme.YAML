@@ -1,0 +1,12 @@
+---
+name: "dark-theme"
+github: &gh "Alaurant/TeamAutoSync"
+issues:
+  - github: *gh
+paths:
+  - "io/jenkins/plugins/dark-theme"
+cd:
+  enabled: true
+developers: &team
+  - "Alaurant"
+github_team: *team
