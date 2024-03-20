@@ -16,6 +16,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Sync maintainers
-        run: java -jar SyncMaintainers.jar
+        run: mvn exec:java -Dexec.mainClass="com.proposal.Main"
         env:
           GITHUB_TOKEN: ${{ secrets.MY_PERSONAL_TOKEN }}
