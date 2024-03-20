@@ -45,8 +45,8 @@ public class yamlTeamLoader {
         }
     }
 
-    public static void main(String[] args) {
-        Team team = loadTeam("./permissions/plugin-dark-theme.YAML");
+    public static void main(String filePath) {
+        Team team = loadTeam(filePath);
         System.out.println("Team: " + team.getName());
         System.out.println("Repo: " + team.getRepoName());
         System.out.println("Members:");
