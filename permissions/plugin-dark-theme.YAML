@@ -8,5 +8,8 @@ paths:
 cd:
   enabled: true
 developers: &team
+<<<<<<< HEAD
   - “Alaurant”
+=======
+>>>>>>> 53b1dedbe2270ab0e772933d1eb707f17f3d6a5e
 github_team: *team
