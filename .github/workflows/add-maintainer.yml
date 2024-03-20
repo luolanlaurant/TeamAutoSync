@@ -16,6 +16,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Sync maintainers
-        run: java -jar target/teamauto.jar
+        run: java -jar /teamautosync/target/teamauto.jar
         env:
           GITHUB_TOKEN: ${{ secrets.MY_PERSONAL_TOKEN }}
