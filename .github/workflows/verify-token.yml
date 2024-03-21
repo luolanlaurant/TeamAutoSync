@@ -1,0 +1,14 @@
+name: Verify GitHub Token
+
+on: [workflow_dispatch]
+
+jobs:
+  verify-token:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check if GitHub token is valid
+        run: |
+          curl -H "Authorization: token ${{ secrets.MY_PERSONAL_TOKEN }}" https://api.github.com/user
+        env:
+          MY_PERSONAL_TOKEN: ${{ secrets.MY_PERSONAL_TOKEN }}
