@@ -18,4 +18,4 @@ jobs:
       - name: Sync maintainers
         run: java -jar teamautosync/target/teamauto.jar
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_PERSONAL_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_FINAL_TOKEN }}
