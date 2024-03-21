@@ -8,5 +8,6 @@ paths:
 cd:
   enabled: true
 developers: &team
-  - “luolanlaurant”
+  - "Alaurant"
+  - "luolanlaurant"
 github_team: *team

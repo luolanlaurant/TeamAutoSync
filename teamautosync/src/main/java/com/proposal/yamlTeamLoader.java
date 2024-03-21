@@ -18,19 +18,9 @@ public class yamlTeamLoader {
             Map<String, Object> data = yaml.load(inputStream);
             String teamName = "";
             List<String> members = null;
-            String repoName = "";
             
             if (data.containsKey("name")) {
-                teamName = (String) data.get("name");
-            }
-            
-            if (data.containsKey("github")) {
-                String fullRepoName = (String) data.get("github");
-                // username/repoName
-                String[] parts = fullRepoName.split("/");
-                if (parts.length == 2) {
-                    repoName = parts[1];
-                }
+                teamName = (String) data.get("github");
             }
             
             String teamMembersKey = data.containsKey("github_team") ? "github_team" : "developers";
@@ -38,7 +28,7 @@ public class yamlTeamLoader {
                 members = (List<String>) data.get(teamMembersKey);
             }
 
-            return new Team(teamName, repoName, members);
+            return new Team(teamName, members);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Failed to load: " + filePath, e);
@@ -48,7 +38,6 @@ public class yamlTeamLoader {
     public static void main(String filePath) {
         Team team = loadTeam(filePath);
         System.out.println("Team: " + team.getName());
-        System.out.println("Repo: " + team.getRepoName());
         System.out.println("Members:");
         for (String member : team.getMembers()) {
             System.out.println(" - " + member);
