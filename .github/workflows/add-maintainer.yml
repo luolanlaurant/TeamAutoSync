@@ -15,7 +15,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Build with Maven
+        run: mvn -B package -DskipTests
       - name: Sync maintainers
         run: java -jar teamautosync/target/teamauto.jar
         env:
-          MY_PERSONAL_TOKEN: ${{ secrets.MY_PERSONAL_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.MY_PERSONAL_TOKEN }}
