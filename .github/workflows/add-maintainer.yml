@@ -18,4 +18,4 @@ jobs:
       - name: Sync maintainers
         run: java -jar teamautosync/target/teamauto.jar
         env:
-          ACCESS_TOKEN: ${{ secrets.MY_PERSONAL_TOKEN }}
+          MY_PERSONAL_TOKEN: ${{ secrets.MY_PERSONAL_TOKEN }}
