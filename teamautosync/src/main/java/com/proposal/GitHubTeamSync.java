@@ -10,7 +10,7 @@ public class GitHubTeamSync {
     public static void syncTeamMembers(Team team) {
         try {
             GitHub github = GitHub.connectUsingOAuth(System.getenv("GITHUB_TOKEN"));
-            GHRepository repo = github.getRepository(team.getName() + "/" + team.getName());
+            GHRepository repo = github.getRepository(team.getName());
 
             // add collaborators to the repository
             System.out.println("Current Collaborators:");

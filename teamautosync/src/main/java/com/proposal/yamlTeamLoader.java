@@ -18,10 +18,9 @@ public class yamlTeamLoader {
             Map<String, Object> data = yaml.load(inputStream);
             String teamName = "";
             List<String> members = null;
-            String repoName = "";
             
             if (data.containsKey("name")) {
-                teamName = (String) data.get("name");
+                teamName = (String) data.get("github");
             }
             
             String teamMembersKey = data.containsKey("github_team") ? "github_team" : "developers";
