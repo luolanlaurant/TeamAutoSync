@@ -4,7 +4,7 @@ github: &gh "Alaurant/TeamAutoSync"
 issues:
   - github: *gh
 paths:
-  - "io/jenkins/plugins/dark-theme"
+  - "Alaurant/TeamAutoSync"
 cd:
   enabled: true
 developers: &team
